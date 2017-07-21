@@ -16,9 +16,18 @@ Future Climate Scenarios- Worldclim v.1.4 future (http://www.worldclim.org/CMIP5
 
 ## Setup
 
-1. Open file (e.g. Future.R) in R Studio
-2. Set current working directory to repo directory
-3. Run the code all at once, or section by section to see results and plots (explained throughout code in annotations). 
-4. Follow the same procedure for Historical.R and Invasive.R. 
-5. Apply similar analyses to other species. 
-6. For further information on formatting data for use in Biomod2 see file "DataPreparation.R". 
+1. If you have never installed gdal, you must install it using brew or from source. If you use brew, open terminal and type:
+
+
+
+    brew install gdal
+
+
+
+
+2. Open file (e.g. Future.R) in R Studio
+3. Set current working directory to repo directory
+4. Run the code all at once, or section by section to see results and plots (explained throughout code in annotations). 
+5. Follow the same procedure for Historical.R and Invasive.R. 
+6. Apply similar analyses to other species. 
+7. For further information on formatting data for use in Biomod2 see file "DataPreparation.R". 
