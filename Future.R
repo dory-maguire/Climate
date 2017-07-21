@@ -115,8 +115,10 @@ myRespXYBoth
 # select uncorrelated climate data (SAME FOR PAST AND FUTURE!)
 myExplCurrent=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_1.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_3.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_4.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_5.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_6.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_12.grd"))
 
-## FUTURE CLIMATE SCENARIO (have to do this for each scenario data)
-##
+##'FUTURE CLIMATE SCENARIO (have to do this for each scenario data)
+##'Here we use as an example GCM: GISS-E2-R, for RCP 60, in year 2070. 
+##'This should be done for 2-3 GCMs, and 2-4 RCPs. 
+
 myExplFuture1GS6070=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi701.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi703.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi704.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi705.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi706.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi7012.grd"))
 
 ##' need to ensure the layer names match the current data layer names
