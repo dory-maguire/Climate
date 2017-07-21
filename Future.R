@@ -12,6 +12,8 @@
 rm(list = ls())
 
 ##' Load the packages
+install.packages("biomod2",dependencies=TRUE)
+install.packages("dplyr",dependencies=TRUE)
 library(biomod2)
 library(dplyr)
 
