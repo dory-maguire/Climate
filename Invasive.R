@@ -9,7 +9,7 @@
 
 ##' Load the library
 rm(list = ls())
-setwd("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses Vedu")
+
 
 ##' Load the packages
 library(biomod2)
@@ -152,7 +152,7 @@ myRespXYBoth
 ##' Stack all the data (same climate data for both this time)
 
 
-myExplCurrent=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_1.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_3.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_4.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_5.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_6.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_12.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/HFP.grd"))
+myExplCurrent=stack(c("./bio_1.grd", "./bio_3.grd", "./bio_4.grd", "./bio_5.grd", "./bio_6.grd", "./bio_12.grd", "./HFP.grd"))
 
 
 ###################################################################################################################################################################
@@ -528,13 +528,13 @@ require(ecospat)
 
 ##' 1.US XY data on Native ensemble model predictions. 
 
-##'fit: /Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/Native.Disk/proj_native projections/individual_projections/Native.Disk_EMmeanByTSS_mergedAlgo_mergedRun_mergedData.img
+##'fit: ./Native.Disk/proj_native projections/individual_projections/Native.Disk_EMmeanByTSS_mergedAlgo_mergedRun_mergedData.img
 ##' obs: myRespInvasiveXY
 ##' 
 XY=myRespXYInvasive
-R=raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/FinalNative.Disk/proj_native projections/individual_projections/FinalNative.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
-R2=raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/FinalInvasive.Disk/proj_invasive projections/individual_projections/FinalInvasive.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
-R3=raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/FinalBoth.Disk/proj_both projections/individual_projections/FinalBoth.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
+R=raster("./FinalNative.Disk/proj_native projections/individual_projections/FinalNative.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
+R2=raster("./FinalInvasive.Disk/proj_invasive projections/individual_projections/FinalInvasive.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
+R3=raster("./FinalBoth.Disk/proj_both projections/individual_projections/FinalBoth.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
 
 #Quickly plot to check the data
 plot(R)
@@ -562,7 +562,7 @@ BoyceBoth
 ##' ## CALIBRATED WITH NATIVE RANGE
 # To bring up the EM model CV for current based on native range
 # plot a projection (just need to select a file to plot)
-predNat <- raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/FinalNative.Disk/proj_native projections/individual_projections/FinalNative.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
+predNat <- raster("./FinalNative.Disk/proj_native projections/individual_projections/FinalNative.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
 plot(predNat/10)
 
 
@@ -602,7 +602,7 @@ dev.off()
 
 ##' ## CALIBRATED WITH INVASIVE RANGE 
 ##' 
-predInv <- raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/FinalInvasive.Disk/proj_invasive projections/individual_projections/FinalInvasive.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
+predInv <- raster("./FinalInvasive.Disk/proj_invasive projections/individual_projections/FinalInvasive.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
 plot(predInv/10)
 
 # To crop the map in EU
@@ -642,7 +642,7 @@ dev.off()
 ##################################################
 ##'CALIBRATED IN BOTH RANGES
 ##' 
-predBoth <- raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/FinalBoth.Disk/proj_both projections/individual_projections/FinalBoth.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
+predBoth <- raster("./FinalBoth.Disk/proj_both projections/individual_projections/FinalBoth.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
 plot(predBoth/10)
 
 # To crop the map in EU

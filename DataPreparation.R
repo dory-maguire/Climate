@@ -9,7 +9,7 @@
 ##Housekeeping####
 ##' Load the library
 rm(list = ls())
-setwd("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses Vedu")
+setwd(".")
 
 ##' Load the packages
 library(biomod2)
@@ -22,7 +22,7 @@ library(raster)
 ##' This environmental data corresponds to the historical analyses of Ventenata dubia in its native range. We used historical and recent 30 year mean climate data from the CRU database (http://www.ipcc-data.org/observ/clim/get_30yr_means.html). Data had to be changed from .dat files to .grd data files.
 
 # the path to the .dat file (need to do this for each file)
-f <- '/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cwet0130.dat'
+f <- 'cwet0130.dat'
 
 # read in the file
 d <- readLines(f)
@@ -65,7 +65,7 @@ writeRaster(b2, filename = sub(".dat$", ".grd", f), overwrite = TRUE)
 ##' Converting the "HFP" or Human Footprint data (.adf files originally) to use in Biomod.
 library(rgdal)
 library(RColorBrewer)
-dpath<-"//Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/HFP/hfp_global_geo_grid/hf_v2geo/hdr.adf"
+dpath<-"/HFP/hfp_global_geo_grid/hf_v2geo/hdr.adf"
 x <- new("GDALReadOnlyDataset", dpath)
 getDriver(x)
 getDriverLongName(getDriver(x))
@@ -78,7 +78,7 @@ plot(r)
 
 # "w" is the CRU data.
 raster_data <- r
-w <- raster("//Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ccld0130.grd", crs= "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0 ")
+w <- raster("/ccld0130.grd", crs= "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0 ")
 
 rp <- projectRaster(from = r, to = w,
             method = "bilinear",
@@ -94,8 +94,8 @@ writeRaster(rp, filename="HFP.grd")
 ##'This environmental data corresponds to the analyses of of Ventenata dubia in given future climate scenarios. The following code can be used to make sure the future climate data from the Worldclim database (http://www.worldclim.org/CMIP5v1) are in the proper format and projected in the same format as .grd files.
 
 ##' Reprojects the future .tif bioclim data to same format, and saves to a .grd file.
-r=raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi7012.tif")
-w <- raster("//Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_1.grd")
+r=raster("./gs60bi7012.tif")
+w <- raster("/./bio_1.grd")
 
 rp <- projectRaster(from = r, to = w,
                     method = "bilinear",

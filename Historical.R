@@ -9,7 +9,7 @@
 ##Housekeeping####
 ##' Load the library
 rm(list = ls())
-setwd("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses Vedu")
+
 
 ##' Load the packages
 library(biomod2)
@@ -124,10 +124,10 @@ myRespXYCurrent
 ##' Stack all the data
 
 # past
-myExplPast=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ccld0130.grd", "/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cdtr0130.grd", "/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cpre0130.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ctmn0130.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ctmp0130.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ctmx0130.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cvap0130.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cwet0130.grd"))
+myExplPast=stack(c("ccld0130.grd", "cdtr0130.grd", "cpre0130.grd","ctmn0130.grd","ctmp0130.grd","ctmx0130.grd","cvap0130.grd","cwet0130.grd"))
 
 # current
-myExplCurrent=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ccld0130.grd", "/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cdtr6190.grd", "/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cpre6190.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ctmn6190.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ctmp6190.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/ctmx6190.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cvap6190.grd","/Users/dorothy_maguire/Documents/The R Folder/Data/Climate data/cwet6190.grd"))
+myExplCurrent=stack(c("ccld0130.grd", "cdtr6190.grd", "cpre6190.grd","ctmn6190.grd","ctmp6190.grd","ctmx6190.grd","cvap6190.grd","cwet6190.grd"))
 
 #####################################################################################
 # Section Two Doing the BIOMOD Modeling ---------------------------------
@@ -338,11 +338,11 @@ pred.efCurrent <- get_predictions(bm.efCurrent)
 #Load the binary projections first
 
 #Raster Binary Past
-pastPred=raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/Past.Disk/proj_past projections/individual_projections/Past.Disk_EMmeanByTSS_mergedAlgo_mergedRun_mergedData_TRUEbin.img")
+pastPred=raster("./Past.Disk/proj_past projections/individual_projections/Past.Disk_EMmeanByTSS_mergedAlgo_mergedRun_mergedData_TRUEbin.img")
 plot(pastPred)
 
 #Raster Binary Current
-currentPred=raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/Current.Disk/proj_current projections/individual_projections/Current.Disk_EMmeanByTSS_mergedAlgo_mergedRun_mergedData_TRUEbin.img")
+currentPred=raster("./Current.Disk/proj_current projections/individual_projections/Current.Disk_EMmeanByTSS_mergedAlgo_mergedRun_mergedData_TRUEbin.img")
 plot(currentPred)
 
 #Call Rangesize Function

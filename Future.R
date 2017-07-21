@@ -10,7 +10,6 @@
 # Section One Housekeeping ---------------------------------
 ##' Load the library
 rm(list = ls())
-setwd("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses Vedu")
 
 ##' Load the packages
 library(biomod2)
@@ -113,13 +112,16 @@ myRespXYBoth
 
 ## CURRENT CLIMATE
 # select uncorrelated climate data (SAME FOR PAST AND FUTURE!)
-myExplCurrent=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_1.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_3.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_4.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_5.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_6.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_12.grd"))
+
+library(rgdal)
+require(raster)
+myExplCurrent=stack(c("bio_1.grd", "bio_3.grd", "bio_4.grd", "bio_5.grd", "bio_6.grd", "bio_12.grd"))
 
 ##'FUTURE CLIMATE SCENARIO (have to do this for each scenario data)
 ##'Here we use as an example GCM: GISS-E2-R, for RCP 60, in year 2070. 
 ##'This should be done for 2-3 GCMs, and 2-4 RCPs. 
 
-myExplFuture1GS6070=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi701.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi703.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi704.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi705.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi706.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi7012.grd"))
+myExplFuture1GS6070=stack(c("./gs60bi701.grd", "./gs60bi703.grd", "./gs60bi704.grd", "./gs60bi705.grd", "./gs60bi706.grd", "./gs60bi7012.grd"))
 
 ##' need to ensure the layer names match the current data layer names
 names(myExplFuture1GS6070)=c("bio_1", "bio_3", "bio_4", "bio_5", "bio_6", "bio_12")
@@ -264,7 +266,7 @@ library(ggplot2)
 
 ##'Future Scenario 1a
 ##'
-predFuture1 <- raster("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/FinalBoth.Disk/proj_future projections 4b/individual_projections/FinalBoth.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
+predFuture1 <- raster("./FinalBoth.Disk/proj_future projections 4b/individual_projections/FinalBoth.Disk_EMcaByTSS_mergedAlgo_mergedRun_mergedData.img")
 plot(predFuture1/10)
 #map.r <- rasterToPoints(predFuture1)
 #df <- data.frame(map.r)
