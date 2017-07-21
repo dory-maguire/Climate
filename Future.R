@@ -108,13 +108,15 @@ myRespXYBoth
 
 ################# SELECT THE ENVIRONMENTAL VARIABLES
 ##' Stack all the data (same climate data for both this time)
+##' Data from Worldclim dataset (http://www.worldclim.org/CMIP5v1). For information on formatting these data for use in Biomod see "Data Preparation.R" Data Formatting 3.
+## Select the climate variables you wish to run analyses with. Be cautious not to select too many correlated variables to avoid overfitting the model. Select variables based on biological significance, and variables that are unlikely to be heavily correlated. Data must be a matrix, data.frame, SpatialPointsDataFrame or RasterStack containing your explanatory variables that will be used to build your models.
 
 ## CURRENT CLIMATE
 # select uncorrelated climate data (SAME FOR PAST AND FUTURE!)
 myExplCurrent=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_1.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_3.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_4.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_5.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_6.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/bio_12.grd"))
 
-## FUTURE CLIMATE SCENARIO 1b
-## RCP 60, RCM CCSM4 (CC)
+## FUTURE CLIMATE SCENARIO (have to do this for each scenario data)
+##
 myExplFuture1GS6070=stack(c("/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi701.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi703.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi704.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi705.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi706.grd", "/Users/dorothy_maguire/Documents/The R Folder/Preliminary Analyses VeDu/gs60bi7012.grd"))
 
 ##' need to ensure the layer names match the current data layer names
