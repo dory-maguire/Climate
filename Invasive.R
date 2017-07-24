@@ -14,6 +14,8 @@ rm(list = ls())
 ##' Load the packages
 install.packages("biomod2",dependencies=TRUE)
 install.packages("dplyr",dependencies=TRUE)
+install.packages("rgeos",dependencies=TRUE)
+install.packages("sp",dependencies=TRUE)
 library(biomod2)
 library(dplyr)
 
