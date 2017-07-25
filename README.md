@@ -20,7 +20,7 @@ Future Climate Scenarios- Worldclim v.1.4 future (http://www.worldclim.org/CMIP5
 
 
 
-    brew install gdal
+    `brew install gdal`
 
 
 
